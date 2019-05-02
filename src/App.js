@@ -47,10 +47,11 @@ class App extends React.Component {
         <Route exact path="/" component={Home} />
         <Route path="/contacts" render={(props) => (
           <ContactList {...props} contacts={Object.keys(this.state.contacts)} />
-          )}></Route>
-          <Route path='/contacts/:name' render={(props) => (
-            <ContactDetail {...props} detail={this.state.contacts}/>
-          )}></Route>
+          )} />
+          <Route path='/contacts/:name' render={(props) => {
+            const id = props.match.params.name;
+            return <ContactDetail {...props} id={id} detail={this.state.contacts[id]}/>
+          }} />
       </div>
     );
 

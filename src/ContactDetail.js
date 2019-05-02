@@ -17,13 +17,12 @@ import React from 'react';
 //     'Tywin Lannister': '404-018-3717'
 // }
 
-function ContactDetail({match, detail}) {
-    const phoneNumber = detail[match.params.name];
-
+function ContactDetail({id, detail}) {
+    
     return (
         <div>
-            <h3>{match.params.name}</h3>
-            <h4>{phoneNumber}</h4>
+            <h3>{id}</h3>
+            <h4>{detail}</h4>
         </div>
     )
 }
